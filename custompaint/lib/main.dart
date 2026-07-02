@@ -63,6 +63,25 @@ class Sky extends CustomPainter {
       sunPaint,
     );
 
+    // canvas.drawRect(
+    //   Rect.fromLTWH(
+    //     size.width * 0.0,
+    //     size.height * 0.7,
+    //     size.width,
+    //     size.height * 0.3,
+    //   ),
+    //   Paint()..color = const Color(0xFF1B5E20),
+    // );
+
+    canvas.drawArc(
+      Offset(size.width * 0.0, size.height * 0.7) & Size(size.width, size.height * 0.6),
+      pi, // Start angle (in radians)
+      pi, // Sweep angle (in radians)
+      true, // Use center
+      Paint()..color = const Color(0xFF1B5E20),
+    );
+
+
   }
 
   @override
