@@ -26,3 +26,5 @@ This sample uses the three main attributes of CustomPaint:
 - `child`: displays the regular Flutter UI above or below the painted layer.
 
 In this example, the painter creates the sky and landscape, while the child shows the text overlay.
+
+![alt text](image.png)
