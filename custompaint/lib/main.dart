@@ -31,5 +31,41 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Sky extends CustomPainter {
+  const Sky();
 
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    final skyGradient = LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: const [
+        Color(0xFF4FC3F7),
+        Color(0xFF0288D1),
+        Color(0xFF01579B),
+      ],
+      stops: const [0.0, 0.55, 1.0],
+    );
+
+    canvas.drawRect(
+      rect,
+      Paint()..shader = skyGradient.createShader(rect),
+    );
+
+    final sunPaint = Paint()
+      ..color = const Color(0xFFFFF176)
+      ..style = PaintingStyle.fill;
+
+    canvas.drawCircle(
+      Offset(size.width * 0.78, size.height * 0.22),
+      size.width * 0.12,
+      sunPaint,
+    );
+
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
 
